@@ -8,10 +8,17 @@ import { Http } from '@angular/http';
 
 
 export class CreateComponent {
-    
-}
 
-//interface Book {
-//    Title: string;
-//    Author: string;
-//}
+    constructor(private http: Http) {}
+
+    submitCreateForm(title: string, author: string) {
+        var params = {
+            newTitle: title,
+            newAuthor: author
+        }
+        this.http.post('/api/SampleData/Create', "params").subscribe(result => {
+        
+            console.log(result);
+        });
+    }
+}

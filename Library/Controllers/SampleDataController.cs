@@ -11,10 +11,6 @@ namespace Library.Controllers
     public class SampleDataController : Controller
     {
         private LibraryDbContext db = new LibraryDbContext();
-        //private static string[] Summaries = new[]
-        //{
-        //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        //};
 
         [HttpGet("[action]")]
         public List<Book> WeatherForecasts()
@@ -23,21 +19,20 @@ namespace Library.Controllers
             return (books);
         }
 
-        //[HttpGet("[action]")]
-        //public IActionResult Create()
-        //{
-        //    Console.WriteLine("It's trying to create");
-        //    return View();
-        //}
+        [HttpPost("[action]")]
+        public Book Create(string bookObject)
+        {
+            Console.WriteLine(bookObject + "this is the book object");
+            //var jsonBook = (bookObject);
+            Book newBook = new Book();
+            //newBook.Title = bookObject.title;
+            //newBook.Author = newAuthor;
+            //db.Books.Add(newBook);
+            //db.SaveChanges();
+            ////var books = db.Books.ToList();
+            return (newBook);
+        }
 
-        //[HttpPost("[action]")]
-        //public IActionResult Create(Book book)
-        //{
-        //    db.Books.Add(book);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-    
 
 
         //public class WeatherForecast

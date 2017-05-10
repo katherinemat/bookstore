@@ -1,3 +1,23 @@
 ﻿<h1>Create Book</h1>
 <p>This component demonstrates fetching data from the server.</p>
 
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">New Book</h3>
+    </div>
+    <div class="panel-body">
+        <div>
+            <label>Title:</label>
+            <br>
+            <input #newTitle>
+        </div>
+
+        <div>
+            <label>Author:</label>
+            <br>
+            <input #newAuthor>
+        </div>
+
+        <button (click)="submitCreateForm(newTitle.value, newAuthor.value); ">Add</button>
+    </div>
+</div>
