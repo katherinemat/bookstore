@@ -11,39 +11,48 @@ namespace Library.Controllers
     public class SampleDataController : Controller
     {
         private LibraryDbContext db = new LibraryDbContext();
-        private static string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        //private static string[] Summaries = new[]
+        //{
+        //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        //};
 
         [HttpGet("[action]")]
         public List<Book> WeatherForecasts()
         {
             var books = db.Books.ToList();
-            Console.WriteLine(books[0].Title);
             return (books);
-            //var rng = new Random();
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            //{
-            //    DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-            //    TemperatureC = rng.Next(-20, 55),
-            //    Summary = Summaries[rng.Next(Summaries.Length)]
-            //});
         }
 
-        public class WeatherForecast
-        {
-            public string DateFormatted { get; set; }
-            public int TemperatureC { get; set; }
-            public string Summary { get; set; }
+        //[HttpGet("[action]")]
+        //public IActionResult Create()
+        //{
+        //    Console.WriteLine("It's trying to create");
+        //    return View();
+        //}
 
-            public int TemperatureF
-            {
-                get
-                {
-                    return 32 + (int)(TemperatureC / 0.5556);
-                }
-            }
-        }
+        //[HttpPost("[action]")]
+        //public IActionResult Create(Book book)
+        //{
+        //    db.Books.Add(book);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+    
+
+
+        //public class WeatherForecast
+        //{
+        //    public string DateFormatted { get; set; }
+        //    public int TemperatureC { get; set; }
+        //    public string Summary { get; set; }
+
+        //    public int TemperatureF
+        //    {
+        //        get
+        //        {
+        //            return 32 + (int)(TemperatureC / 0.5556);
+        //        }
+        //    }
+        //}
     }
 }
