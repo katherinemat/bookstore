@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { Http } from '@angular/http';
+import {RequestOptions, Request, RequestMethod} from '@angular/http';
 
 @Component({
     selector: 'create',
@@ -12,13 +13,10 @@ export class CreateComponent {
     constructor(private http: Http) {}
 
     submitCreateForm(title: string, author: string) {
-        var params = {
-            newTitle: title,
-            newAuthor: author
-        }
-        this.http.post('/api/SampleData/Create', "params").subscribe(result => {
-        
-            console.log(result);
-        });
+        this.http.request(new Request({
+            method: RequestMethod.Post,
+            url: 'api/SampleData/Create',
+            search: 'newAuthor='+ author +'&newTitle=' + title
+        })).subscribe(console.log);
     }
 }
