@@ -29,5 +29,14 @@ namespace Library.Controllers
             db.SaveChanges();
             return (newBook);
         }
+
+        [HttpGet("[action]")]
+        public Book Details(int id)
+        {
+            Book thisBook = db.Books.FirstOrDefault(book => book.BookId == id);
+            return (thisBook);
+        }
+
+
     }
 }

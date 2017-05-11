@@ -9,13 +9,19 @@
         <tr>
             <th>Title</th>
             <th>Author</th>
+            <div *ngIf="showDetailsPage">
+                <th>Details</th>
+            </div>
+            
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.title }}</td>
-            <td>{{ forecast.author }}</td>
+        <tr *ngFor="let book of forecasts">
+            <td (click)="goToDetailsPage(book)">{{ book.title }}</td>
+            <td>{{ book.author }}</td>
         </tr>
     </tbody>
 </table>
-<!--<app-create></app-create>-->
+<div *ngIf="showDetailsPage">
+    <td><app-details [selectedBook]="clickedBook"></app-details></td>
+</div>
