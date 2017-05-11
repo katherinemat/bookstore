@@ -18,6 +18,6 @@
             <input #newAuthor>
         </div>
 
-        <button (click)="submitCreateForm(newTitle.value, newAuthor.value); ">Add</button>
+        <button (click)="submitCreateForm(newTitle.value, newAuthor.value); newTitle.value=''; newAuthor.value='';">Add</button>
     </div>
 </div>

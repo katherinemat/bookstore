@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import {RequestOptions, Request, RequestMethod} from '@angular/http';
 
 @Component({
-    selector: 'create',
+    selector: 'app-create',
     template: require('./create.component.html')
 })
 
